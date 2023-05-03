@@ -34,4 +34,4 @@ for line in filehandler:
     print(words[1])
     count = count + 1
     
-print("There were" , count, "lines in the file with 'From' as the first word")
+print("There were" , count, "lines in the file with From as the first word")
