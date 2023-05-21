@@ -1,10 +1,11 @@
->   Name: Time Tracker
-    Version: 1.0
-    Author: Victor T. Migwe
-    Dependencies: Python 3.6 or later
-    Project Description: Time Tracking Application
-    Bugs: None known at this time.
-    License: This program is licensed under the MIT License.
+>- Name: Time Tracker
+- Version: 1.0
+- Author: Victor T. Migwe
+- Dependencies: Python 3.6 or later
+- Project Description: Time Tracking Application
+- Bugs: None known at this time.
+- License: This program is licensed under the MIT License.
+
 
 
 # Time Tracking Application
