@@ -3,10 +3,16 @@
 import time
 
 def start_task(tasks):
-    # -----
-    # TO DO
-    # -----
-
+    """
+    Starts a new task by adding it to the tasks dictionary with the current time as the start time.
+    Args:
+        tasks (dict): Dictionary to store the tasks
+    """"
+    
+    task_name = input("Enter the Task Name: ")
+    
+    
+    
 def stop_task(tasks):
     # -----
     # TO DO
