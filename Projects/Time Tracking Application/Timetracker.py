@@ -119,33 +119,37 @@ def main_menu(tasks):
         None
     """                        
     while True:
-        print("Time Tracking Application")
-        print("1. Start a Task")
-        print("2. Stop a Task")
-        print("3. Display task history")
-        print("4. Display total completed time")
-        print("5. Export task history")
-        print("6. Exit")
-                            
-        choice = input("Enter your choice (1-6): ")
-        
-        if choice == '1':
-            start_task(tasks)
-        elif choice == '2':
-            stop_task(tasks)
-        elif choice == '3':
-            display_task_history(tasks)
-        elif choice == '4':
-            display_total_completed_time(tasks)
-        elif choice == '5':
-            filename = input("Enter the desired filename with a .txt at the end (leave blank for default): ")
-            export_task_history(tasks, filename or "task_history.txt")
-        elif choice == '6':
-            exit_program()
-        else:
-            print("Invalid Choice. Try again.")
-                            
-        print()
+        try:
+            print("Time Tracking Application")
+            print("1. Start a Task")
+            print("2. Stop a Task")
+            print("3. Display task history")
+            print("4. Display total completed time")
+            print("5. Export task history")
+            print("6. Exit")
+
+            choice = input("Enter your choice (1-6): ")
+
+            if choice == '1':
+                start_task(tasks)
+            elif choice == '2':
+                stop_task(tasks)
+            elif choice == '3':
+                display_task_history(tasks)
+            elif choice == '4':
+                display_total_completed_time(tasks)
+            elif choice == '5':
+                filename = input("Enter the desired filename with a .txt at the end (leave blank for default): ")
+                export_task_history(tasks, filename or "task_history.txt")
+            elif choice == '6':
+                exit_program()
+            else:
+                print("Invalid Choice. Try again.")
+
+            print()
+        except KeyboardInterrupt:
+            print("\nKeyboard interrupt recieved. Exiting the program.")
+            exit()                      #with this, it will stop the sprogram with an elegant way instead of giving you a traceback error.
 
 def exit_program():
     """
