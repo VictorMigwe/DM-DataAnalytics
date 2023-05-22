@@ -98,14 +98,14 @@ def export_task_history(tasks, filename):
     """
     with open(filename, 'w') as file:
         file.write("Task History: \n")
-        for task_name, task_info in task.items():
+        for task_name, task_info in tasks.items():
             if isinstance(task_info, float):    #Check if task is currently running
                 file.write(f"- {task_name} In progress \n")
             else:
                 start_time, end_time = task_info
                 elapsed_time = end_time - start_time
                 file.write(f"- {task_name}: {elapsed_time: .2f} seconds \n")
-        print(f"Task history exported to '{file_name}'.")
+        print(f"Task history exported to '{filename}'.")
                 
     
 def main_menu(tasks):
@@ -155,7 +155,7 @@ def main_menu(tasks):
 
             print()
         except KeyboardInterrupt:
-            print("\nKeyboard interrupt recieved. Exiting the program.")
+            print("\nKeyboard interrupt recieved. Exiting the program. Goodbye!")
             exit()                      #with this, it will stop the sprogram with an elegant way instead of giving you a traceback error.
 
 def exit_program():
