@@ -14,31 +14,31 @@ Starting a task, stopping a task, displaying the task history, displaying the to
 
 ## Features
 
-### Start a Task
+### `Start a Task`
 
 -   Allows the user to start a new task by entering a task name.
 -   Adds the task to the tasks dictionary with the current time as the start time.
 -   If the task name already exists, it displays a message indicating that the task already exists.
 
-### Stop a Task
+### `Stop a Task`
 
 -   Allows the user to stop a running task by entering the task name.
 -   Calculates the elapsed time since the task was started.
 -   Stores the task in the tasks dictionary as a tuple with the start and end times.
 -   If the task name is not found or the task is already stopped, it displays an appropriate message.
 
-### Display Task History
+### `Display Task History`
 
 -   Displays the task history along with their respective elapsed times.
 -   If a task is currently running, it displays "In progress" instead of the elapsed time.
 -   If no tasks are tracked, it displays a message indicating that no tasks are tracked.
 
-### Display Total Completed Time
+### `Display Total Completed Time`
 
 -   Calculates and displays the total completed time across all the stopped tasks.
 -   Ignores the running tasks and considers only the tasks that have been stopped.
 
-### Export Task History
+### `Export Task History`
 
 -   Allows the user to export the task history to a text file.
 -   By default, the exported file is named "task\_history.txt" and has a .txt extension.
@@ -46,31 +46,37 @@ Starting a task, stopping a task, displaying the task history, displaying the to
 -   The exported file includes the task history with their respective elapsed times.
 -   If a task is currently running, it is indicated as "In progress" in the exported file.
 
-### Exit the Program
+### `Exit the Program`
 
 -   Allows the user to exit the program gracefully.
 
 
-## Time Tracking Application
+## Usage
 
-The Time Tracking Application is a simple command-line program that allows users to track the duration of tasks. It provides features to start and stop tasks, display task history, calculate total completed time, and export task history to a file.
+Run the program by executing the script. The main menu will be displayed with the available options. Enter the corresponding number for the desired action:
 
-### Features
+-   To `start a task`, choose option 1 and enter the task name.
+-   To `stop a task`, choose option 2 and enter the task name.
+-   To `display the task history`, choose option 3.
+-   To `display the total completed time`, choose option 4.
+-   To `export the task history`, choose option 5 and optionally enter a filename.
+-   To `exit the program`, choose option 6.
 
-1.  `Start a Task:`
-Users can start a new task by providing a task name. The application records the start time of the task.
-    
-2.  `Stop a Task:`
-Users can stop an ongoing task by providing the task name. The application calculates the elapsed time since the task started and records the start and end times of the task.
-    
-3.  `Display Task History:`
-Users can view the history of all completed tasks along with their respective elapsed times.
-    
-4.  `Display Total Completed Time:`
-Users can see the total completed time across all tasks.
-    
-5.  `Export Task History:`
-Users can export the task history to a file for record-keeping or further analysis.
-    
-6.  `Exit the Program:`
-Users can exit the application.
+## Dependencies
+
+The Time Tracking Application requires the following dependencies:
+
+-   Python 3.x
+-   No additional external libraries or packages are required.
+
+
+## Limitations
+
+-   The Time Tracking Application runs in a single session and does not persist data across sessions. Once the program is closed, the task history is lost.
+-   The elapsed time is calculated based on the system time, so it may not be precise in cases where the system time is adjusted or there are time discrepancies.
+-   The program does not handle concurrent access or multiple users. It is designed for single-user usage.
+-   The task history is stored in memory during the program execution. If the program terminates unexpectedly, the task history will be lost.
+
+## Conclusion
+
+The Time Tracking Application provides a simple and convenient way to track and manage tasks along with their elapsed times. Whether you need to monitor your work activities, track project durations, or analyze your productivity, this application can assist you in keeping organized records.
