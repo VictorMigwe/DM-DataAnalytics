@@ -128,7 +128,14 @@ def main_menu(tasks):
             print("5. Export task history")
             print("6. Exit")
 
-            choice = input("Enter your choice (1-6): ")
+            
+            try:
+                choice = input("Enter your choice (1-6): ")
+            except EOFError:
+                print("No input was provided.")
+                choice = None
+            
+#            choice = input("Enter your choice (1-6): ")
 
             if choice == '1':
                 start_task(tasks)
