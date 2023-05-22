@@ -149,10 +149,22 @@ def main_menu(tasks):
         print()
 
 def exit_program():
+    """
+    This funcion exits the program gracefully.
+    
+    Returns:
+        None
+    """    
     print("Exiting the program. Goodbye!")
     exit()
 
 def run_program():
+    """
+    This function starts the program
+    
+    Returns:
+        None
+    """            
     tasks = {}
     main_menu(tasks)
 
