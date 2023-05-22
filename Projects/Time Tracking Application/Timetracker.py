@@ -4,7 +4,7 @@ import time
 
 def start_task(tasks):
     """
-    Starts a new task by adding it to the tasks dictionary with the current time as the start time.
+    This function Starts a new task by adding it to the tasks dictionary with the current time as the start time.
     
     Args:
         tasks (dict): Dictionary to store the tasks
@@ -23,7 +23,7 @@ def start_task(tasks):
         
 def stop_task(tasks):
     """
-    Stops a task bey calculating the time that it has been running and sorts it in the dictionary
+    This function Stops a task bey calculating the time that it has been running and sorts it in the dictionary
     
     Args: tasks(dict): Dictionary containing the tasks
     
@@ -46,32 +46,69 @@ def stop_task(tasks):
     
 def display_task_history(tasks):
     """
-    Displays the task 
-    """
+    This function Displays the task history with their time taken.
     
+    Args:
+        tasks (dict): Dictionary containing the tasks
+    
+    Returns:
+        None
+    """
     if tasks:
         print("Task History:")
         for task_name, task_info in tasks.items():
             if isinstance(task_info, float):  # Check if task is currently running
-                # -----
-                # TO DO
-                # -----
+                print(f"- {task_name}: In progress")
             else:
-                # -----
-                # TO DO
-                # -----
+                start_time, end_time = task_info
+                elapsed time = endtime - start_time
+                print(f"- {task_name}: {elapsed_time:.2f} seconds")
     else:
         print("No tasks tracked.")
 
 def display_total_completed_time(tasks):
+    """
+    This function Displays the total elapsed time across all tasks.
+    
+    Args:
+        tasks (dict): Dictionary containing the tasks
+    
+    Returns:
+        None    
+    """
+    
     total_time = 0
     for task_info in tasks.values():
         if isinstance(task_info, tuple):  # Check if task is stopped
-            # -----
-            # TO DO
-            # -----
+            start_time, end_time = task_info
+            elapsed_time = end_time - start_time
+            total_time += elapsed_time
+            
     print(f"Total Completed Time: {round(total_time, 2)} seconds")
 
+def export_task_history
+    """
+    This function exports the task history to a file.
+    
+    Args:
+        tasks (dict): Dictionary containign the tasks
+        filename (str): The name of the file to export the task history.
+        
+    Returns:
+        None    
+    """
+    with open(filename, 'w') as file:
+        file.write("Task History: \n")
+        for task_name, task_info in task.items():
+            if isinstance(task_info, float):    #Check if task is currently running
+                file.write(f"- {task_name} In progress \n")
+            else:
+                start_time, end_time = task_info
+                elapsed_time = end_time - start_time
+                file.write (f"= {task_name}: {elapsed_time: .2f} seconds \n)
+        print(f"Task history exported to '{file_name}'.")
+                
+    
 def main_menu(tasks):
     while True:
         # -----
