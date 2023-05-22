@@ -11,8 +11,7 @@ def start_task(tasks):
         
     Returns:
         None
-    
-    """"
+    """
     
     task_name = input("Enter the Task Name: ")
     if task_name in tasks:
@@ -35,9 +34,9 @@ def stop_task(tasks):
         if isinstance(tasks[task_name], float):     #check if task is currently running
             start_time = tasks[task_name]
             elapsed_time = time.time() - start_time
-            task[task_name] = (start_time, time.time())     #Store the task as a tuple with start and end times
+            tasks[task_name] = (start_time, time.time())     #Store the task as a tuple with start and end times
             print(f"Stopped Task: {task_name}")
-            print(f"Elapsed time: {elapsed time:.2f} second")
+            print(f"Elapsed time: {elapsed_time:.2f} second")
         else:
             print(f"Task '{task_name}' is already stopped.")
     else:
@@ -61,7 +60,7 @@ def display_task_history(tasks):
                 print(f"- {task_name}: In progress")
             else:
                 start_time, end_time = task_info
-                elapsed time = endtime - start_time
+                elapsed_time = end_time - start_time
                 print(f"- {task_name}: {elapsed_time:.2f} seconds")
     else:
         print("No tasks tracked.")
@@ -86,7 +85,7 @@ def display_total_completed_time(tasks):
             
     print(f"Total Completed Time: {round(total_time, 2)} seconds")
 
-def export_task_history
+def export_task_history(tasks, filename):
     """
     This function exports the task history to a file.
     
@@ -105,7 +104,7 @@ def export_task_history
             else:
                 start_time, end_time = task_info
                 elapsed_time = end_time - start_time
-                file.write (f"= {task_name}: {elapsed_time: .2f} seconds \n)
+                file.write(f"- {task_name}: {elapsed_time: .2f} seconds \n")
         print(f"Task history exported to '{file_name}'.")
                 
     
@@ -132,16 +131,16 @@ def main_menu(tasks):
         
         if choice == '1':
             start_task(tasks)
-        elif choice == '2'
+        elif choice == '2':
             stop_task(tasks)
-        elif choice == '3'
+        elif choice == '3':
             display_task_history(tasks)
-        elif choice == '4'
-            display_total_completed_task_time(tasks)
-        elif choice == '5'
+        elif choice == '4':
+            display_total_completed_time(tasks)
+        elif choice == '5':
             filename = input("Enter the desired filename with a .txt at the end (leave blank for default): ")
             export_task_history(tasks, filename or "task_history.txt")
-        elif choice == '6'
+        elif choice == '6':
             exit_program()
         else:
             print("Invalid Choice. Try again.")
