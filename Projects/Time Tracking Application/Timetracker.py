@@ -110,10 +110,42 @@ def export_task_history
                 
     
 def main_menu(tasks):
+    """
+    This function Displays the main menu and handles the user input for task management.
+    
+    Args:
+        tasks(dict): Dictionary to store the tasks
+        
+    Returns:
+        None
+    """                        
     while True:
-        # -----
-        # TO DO
-        # -----
+        print("Time Tracking Application")
+        print("1. Start a Task")
+        print("2. Stop a Task")
+        print("3. Display task history")
+        print("4. Display total completed time")
+        print("5. Export task history")
+        print("6. Exit")
+                            
+        choice = input("Enter your choice (1-6): ")
+        
+        if choice == '1':
+            start_task(tasks)
+        elif choice == '2'
+            stop_task(tasks)
+        elif choice == '3'
+            display_task_history(tasks)
+        elif choice == '4'
+            display_total_completed_task_time(tasks)
+        elif choice == '5'
+            filename = input("Enter the desired filename with a .txt at the end (leave blank for default): ")
+            export_task_history(tasks, filename or "task_history.txt")
+        elif choice == '6'
+            exit_program()
+        else:
+            print("Invalid Choice. Try again.")
+                            
         print()
 
 def exit_program():
